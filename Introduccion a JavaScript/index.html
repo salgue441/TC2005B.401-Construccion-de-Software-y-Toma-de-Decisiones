@@ -1,0 +1,81 @@
+<!DOCTYPE >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+    <title>Laboratorio de JavaScript</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="body__header">
+        <h1 class="main__header">Laboratorio de JavaSript</h1>
+      </header>
+
+      <main class="content">
+        <div class="primera__pregunta">
+          <h2>Tabla de Numeros</h2>
+          <p>
+            Genera una tabla con los numeros del 1 al numero dado con sus
+            cuadrados y cubos.
+          </p>
+          <table id="tabla">
+            <tr>
+              <th>Original</th>
+              <th>Cuadrado</th>
+              <th>Cubo</th>
+            </tr>
+          </table>
+          <button onclick="tabla()">Generar Tabla</button>
+        </div>
+
+        <div class="segunda__pregunta">
+          <h2>Suma de 2 Numeros aleatorios</h2>
+          <p>
+            Genera 2 numeros aleatorios, pide al usuario un resultado y
+            comprueba si es correcto. Ademas, muestra el tiempo que le tomo al
+            usuario responder.
+          </p>
+
+          <button onclick="suma()">Suma</button>
+        </div>
+
+        <div class="tercera__pregunta">
+          <h2>Contador de Numeros negativos, 0's y mayores a 0</h2>
+
+          <p>
+            Pide al usuario un arreglo de numeros. Muestra cuantos numeros
+            negativos, 0's y mayores a 0 hay en el arreglo.
+          </p>
+
+          <form id="tercer__form">
+            <input type="text" id="numeros" name="numeros" />
+            <button type="submit">Contar</button>
+          </form>
+        </div>
+
+        <div class="cuarta__pregunta">
+          <h2>Promedios de un arreglo</h2>
+          <p>Pide al usuario un arreglo de numeros.</p>
+
+          <form id="cuarto__form">
+            <label for="matrix">Ingresa una matriz: </label><br />
+            <textarea id="matrix" name="matrix" rows="4" cols="50"></textarea>
+            <br />
+            <input
+              type="button"
+              value="Calcular Promedios"
+              onclick="calcula_promedio()"
+            />
+          </form>
+
+          <p id="result"></p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
