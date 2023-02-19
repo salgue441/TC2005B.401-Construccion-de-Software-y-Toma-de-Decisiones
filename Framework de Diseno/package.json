@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "auto-save": "npx tailwindcss -i ./css/styles.css -o ./dist/styles.css",
     "build": "postcss css/styles.css -o dist/styles.css"
   },
   "keywords": [],
