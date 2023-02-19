@@ -1,3 +1,4 @@
+// Primera pregunta
 /**
  * @brief
  * Recibe un numero de pedido con un prompt.
@@ -19,6 +20,7 @@ function tabla() {
   }
 }
 
+// Segunda pregunta
 /**
  * @brief
  * Usando un prompt, pide al usuario el resultado
@@ -48,7 +50,9 @@ function suma() {
   }
 }
 
+// Tercera pregunta
 /**
+ *
  * @brief
  * Regresa la cantidad de numeros negativos,
  * la cantida de 0s y la cantidad de valores
@@ -76,6 +80,13 @@ function contador(num_array) {
   return [negativos, ceros, positivos]
 }
 
+/**
+ * @brief
+ * Funcion auxiliar. Regresa la cantidad de numeros
+ * negativos, la cantida de 0s y la cantidad de valores
+ * mayores a 0 en el arreglo
+ * @return {Void} No regresa nada.
+ */
 const tercer__form = document.getElementById("tercer__form")
 tercer__form.addEventListener("submit", (e) => {
   e.preventDefault()
@@ -91,6 +102,7 @@ tercer__form.addEventListener("submit", (e) => {
   tercer__form.appendChild(output)
 })
 
+// Cuarta pregunta
 /**
  * @brief
  * Regresa un arreglo con los promedios de cada uno de
@@ -130,6 +142,7 @@ calcula_promedio = () => {
   document.getElementById("result").appendChild(output)
 }
 
+// Quinta pregunta
 /**
  * @brief
  * Invierte la secuencia de numeros del arreglo.
@@ -146,3 +159,100 @@ function inverso(num_array) {
 
   return nuevo_array
 }
+
+/**
+ * @brief
+ * Funcion auxiliar. Invierte la secuencia de numeros
+ * del arreglo.
+ * @return {Void} No regresa nada.
+ */
+const quinto__form = document.getElementById("quinto__form")
+quinto__form.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  const input = document.getElementById("arreglo")
+  const arreglo = input.value.split(",").map((num) => parseInt(num))
+
+  const resultado = inverso(arreglo)
+  const output = document.createElement("p")
+
+  output.textContent = `Inverso: ${resultado}`
+
+  quinto__form.appendChild(output)
+})
+
+// Sexta pregunta
+/**
+ * @brief
+ * Maneja el movimiento de los memes en el contenedor
+ * @return {Void} No regresa nada.
+ */
+function memeCarousel() {
+  const memes = [
+    {
+      url: "https://miro.medium.com/max/500/1*ZhYNqU2y96_f3QkWq9oiWQ.jpeg",
+      title: "Primer meme",
+    },
+    {
+      url: "https://media.makeameme.org/created/data-is-all.jpg",
+      title: "Segundo meme",
+    },
+    {
+      url: "https://www.kidscodecs.com/wp-content/uploads/2020/02/History_TS_ProgrammingMemes_image4.png",
+      title: "Tercer meme",
+    },
+    {
+      url: "https://i.imgflip.com/5qikpc.jpg",
+      title: "Cuarto meme",
+    },
+    {
+      url: "https://i.pinimg.com/originals/25/d1/31/25d131d65382d36c6698d7c891fdbae0.jpg",
+      title: "Quinto meme",
+    },
+  ]
+
+  const memeContainer = document.getElementById("meme-container")
+  const prevButton = document.getElementById("prev-btn")
+  const nextButton = document.getElementById("next-btn")
+
+  let currentMeme = 0
+
+  const meme = memes[currentMeme]
+  const img = document.createElement("img")
+
+  img.src = meme.url
+  img.alt = meme.title
+  img.classList.add("active-meme")
+
+  memeContainer.appendChild(img)
+
+  prevButton.addEventListener("click", () => {
+    memeContainer.removeChild(memeContainer.firstChild)
+    currentMeme = (currentMeme - 1 + memes.length) % memes.length
+
+    const meme = memes[currentMeme]
+    const img = document.createElement("img")
+
+    img.src = meme.url
+    img.alt = meme.title
+    img.classList.add("active-meme")
+
+    memeContainer.appendChild(img)
+  })
+
+  nextButton.addEventListener("click", () => {
+    memeContainer.removeChild(memeContainer.firstChild)
+    currentMeme = (currentMeme + 1) % memes.length
+
+    const meme = memes[currentMeme]
+    const img = document.createElement("img")
+
+    img.src = meme.url
+    img.alt = meme.title
+    img.classList.add("active-meme")
+
+    memeContainer.appendChild(img)
+  })
+}
+
+memeCarousel()

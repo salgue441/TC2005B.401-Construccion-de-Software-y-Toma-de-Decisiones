@@ -11,71 +11,135 @@
   </head>
 
   <body>
-    <div class="container">
-      <header class="body__header">
-        <h1 class="main__header">Laboratorio de JavaSript</h1>
-      </header>
+    <section class="section">
+      <div class="container">
+        <header>
+          <h1 class="title">Laboratorio de JavaScript</h1>
+        </header>
 
-      <main class="content">
-        <div class="primera__pregunta">
-          <h2>Tabla de Numeros</h2>
-          <p>
-            Genera una tabla con los numeros del 1 al numero dado con sus
-            cuadrados y cubos.
+        <section class="hero is-primary">
+          <div class="hero-body">
+            <p class="title">Ejercicios</p>
+          </div>
+        </section>
+
+        <!-- Primera pregunta -->
+        <section class="section">
+          <p class="subtitle">Ejercicio 1</p>
+          <p class="paragraph">
+            Crear una función que reciba un número y retorne el cuadrado y cubo
+            de ese número.
           </p>
-          <table id="tabla">
+
+          <table id="tabla" class="table">
             <tr>
               <th>Original</th>
               <th>Cuadrado</th>
               <th>Cubo</th>
             </tr>
           </table>
-          <button onclick="tabla()">Generar Tabla</button>
-        </div>
 
-        <div class="segunda__pregunta">
-          <h2>Suma de 2 Numeros aleatorios</h2>
-          <p>
+          <button onclick="tabla()" class="button is-link">
+            Generar Tabla
+          </button>
+        </section>
+
+        <!-- Segunda pregunta -->
+        <section class="section">
+          <p class="subtitle">Ejercicio 2</p>
+          <p class="paragraph">
             Genera 2 numeros aleatorios, pide al usuario un resultado y
             comprueba si es correcto. Ademas, muestra el tiempo que le tomo al
             usuario responder.
           </p>
 
-          <button onclick="suma()">Suma</button>
-        </div>
+          <div class="block"></div>
+          <button onclick="suma()" class="button is-info">Generar Sumas</button>
+        </section>
 
-        <div class="tercera__pregunta">
-          <h2>Contador de Numeros negativos, 0's y mayores a 0</h2>
-
-          <p>
+        <!-- Tercera pregunta -->
+        <section class="section">
+          <p class="subtitle">Ejercicio 3</p>
+          <p class="paragraph">
             Pide al usuario un arreglo de numeros. Muestra cuantos numeros
-            negativos, 0's y mayores a 0 hay en el arreglo.
+            negativos, 0's y mayores a 0 hay en el arreglo. Presiona enter.
           </p>
 
+          <div class="block"></div>
+
           <form id="tercer__form">
-            <input type="text" id="numeros" name="numeros" />
-            <button type="submit">Contar</button>
+            <input
+              type="text"
+              id="numeros"
+              name="numeros"
+              class="input is-link"
+            />
           </form>
-        </div>
+        </section>
 
-        <div class="cuarta__pregunta">
-          <h2>Promedios de un arreglo</h2>
-          <p>Pide al usuario un arreglo de numeros.</p>
+        <!-- Cuarta pregunta -->
+        <section class="section">
+          <p class="subtitle">Ejercicio 4</p>
+          <p class="paragraph">
+            Pide al usuario una matriz de numeros. Las diferentes matrices son
+            tomadas a partir del enter.
+          </p>
 
-          <form id="cuarto__form">
-            <label for="matrix">Ingresa una matriz: </label><br />
+          <div class="block"></div>
+
+          <form id="cuarto__form" class="control">
+            <label for="matrix">Ingresa una matriz: </label>
             <textarea id="matrix" name="matrix" rows="4" cols="50"></textarea>
             <br />
+
             <input
               type="button"
               value="Calcular Promedios"
-              onclick="calcula_promedio()"
+              onclick="calcula_promedio() "
+              class="button is-success"
             />
           </form>
 
           <p id="result"></p>
-        </div>
-      </main>
-    </div>
+        </section>
+
+        <!-- Quinta pregunta -->
+        <section class="section">
+          <p class="subtitle">Ejercicio 5</p>
+          <p class="paragraph">
+            Pide al usuario un arreglo de numeros. Muestra el resultado inverso
+            del arreglo. Presiona Enter para generar el inverso.
+          </p>
+
+          <div class="block"></div>
+          <form id="quinto__form">
+            <input
+              type="text"
+              id="arreglo"
+              name="arreglo"
+              class="input is-link"
+            />
+          </form>
+        </section>
+
+        <!-- Sexta pregunta -->
+        <section class="section">
+          <p class="subtitle">Ejercicio 6</p>
+          <p class="paragraph">Carrusel de memes de gatos</p>
+
+          <div class="block"></div>
+
+          <div id="meme-container"></div>
+          <button id="prev-btn">Anterior</button>
+          <button id="next-btn">Siguiente</button>
+
+          <script></script>
+        </section>
+      </div>
+    </section>
   </body>
+
+  <script>
+    generarCarrusel()
+  </script>
 </html>
