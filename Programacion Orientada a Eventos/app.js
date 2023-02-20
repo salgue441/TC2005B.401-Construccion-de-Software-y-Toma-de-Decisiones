@@ -22,13 +22,13 @@ verify_data = () => {
   if (password === verify_password) {
     if (regex.test(password)) {
       result.innerHTML = "Password is accepted"
-      result.style.color = "green"
+      result.style.color = "#77DD77"
     } else {
       result.innerHTML = "Password is weak"
-      result.style.color = "red"
+      result.style.color = "#FF6961"
     }
   } else {
     result.innerHTML = "Passwords do not match"
-    result.style.color = "red"
+    result.style.color = "#FF6961"
   }
 }
