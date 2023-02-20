@@ -17,10 +17,16 @@ verify_data = () => {
   let password = document.getElementById("password").value
   let verify_password = document.getElementById("verify_password").value
   let result = document.getElementById("result")
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/g
 
-  if (password == verify_password) {
-    result.innerHTML = "Passwords match"
-    result.style.color = "green"
+  if (password === verify_password) {
+    if (regex.test(password)) {
+      result.innerHTML = "Password is accepted"
+      result.style.color = "green"
+    } else {
+      result.innerHTML = "Password is weak"
+      result.style.color = "red"
+    }
   } else {
     result.innerHTML = "Passwords do not match"
     result.style.color = "red"
