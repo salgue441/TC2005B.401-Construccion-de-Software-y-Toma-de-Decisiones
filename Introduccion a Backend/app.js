@@ -29,6 +29,24 @@ write_text = (text) => {
   filesys.writeFileSync("text.txt", text)
 }
 
+/**
+ * @brief
+ * Recibe un string y lo invierte.
+ * @param {String} text - Texto a invertir
+ * @returns {String} inverted_text - Texto invertido
+ * @example
+ * reverse_text("Hola") // aloH
+ */
+reverse_text = (text) => {
+  let inverted_text = ""
+
+  for (let i = text.length - 1; i >= 0; i--) {
+    inverted_text += text[i]
+  }
+
+  return inverted_text
+}
+
 // User functionaliy
 const readline = require("readline").createInterface({
   input: process.stdin,
@@ -43,6 +61,9 @@ readline.question("Ingrese numeros separados por coma: ", (numbers) => {
     write_text(text)
     console.log("Archivo escrito correctamente")
 
-    readline.close()
+    readline.question("Ingrese texto a invertir: ", (text) => {
+      console.log(`Texto invertido: ${reverse_text(text)}`)
+      readline.close()
+    })
   })
 })
