@@ -21,7 +21,6 @@ average = (numbers) => {
  * Recibe un string y lo escribe en un archivo de texto.
  * @dependency fs - modulo nativo de nodejs para manejo de archivos de texto
  * @param {String} text - Texto a escribir en el archivo
- * @returns {Boolean} true - Si el archivo fue escrito correctamente
  */
 write_text = (text) => {
   const filesys = require("fs")
