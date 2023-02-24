@@ -1,13 +1,15 @@
-const http = require("http")
+const http = require("http");
+const fs = require('fs');
 
-const server = http.createServer((request, response) => {
-  console.log(request.url)
-  response.setHeader("Content-Type", "text/html")
-  response.write("<h1>Hot Cakes</h1>")
-  response.write("<p>Hot cakes are the best</p>")
-  response.end()
-})
 
-server.listen(3000, () => {
-  console.log("Server is running on port 3000")
-})
+fs.readFile('./index.html', (err, html) => {
+  if (err) {
+    throw err;
+  }
+  http.createServer((request, response) => {
+    response.writeHeader(200, {"Content-Type": "text/html"});
+    response.write(html);
+    response.end();
+  }).listen(3000);
+});
+
