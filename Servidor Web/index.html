@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programacion Orientada a Eventos</title>
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+
+    <main class="container">
+      <div class="passwordContainer">
+        <h2>Password Verifier</h2>
+        <p>Minimum password length is 8 characters. Needs to be alfanumeric</p>
+
+        <form id="formID">
+          <!-- Username -->
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+
+          <!-- Password -->
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+
+          <!-- Verify password -->
+          <label for="verify_password">Verify password</label>
+          <input
+            type="password"
+            id="verify_password"
+            name="verify_password"
+            placeholder="Verify password"
+            required
+          />
+
+          <button class="button" type="submit" onclick="verify_data()">Submit</button>
+        </form>
+
+        <p id="result"></p>
+      </div>
+
+      <div class="data">
+        <h1>Alumnos</h1>
+        <table>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Matrícula</th>
+          </tr>
+  
+          <tr>
+            <td>Carlos</td>
+            <td>Salguero</td>
+            <td>A00833341</td>
+          </tr>
+  
+          <tr>
+            <td>Diego</td>
+            <td>Sandoval</td>
+            <td>A01709113</td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+ 
+  </body>
+</html>
