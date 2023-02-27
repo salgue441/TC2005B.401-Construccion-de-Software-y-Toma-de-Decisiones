@@ -30,7 +30,7 @@ materia Construcción de Software y Toma de Decisiones.
 - Laboratorio 3: CSS (CssLab)
 - Laboratorio 4: Fundamentos de JavaScript (Introducción a JavaScript)
 - Laboratorio 5: Frameworks de Estilo (Framework de Diseño)
-- Laboratorio 6: Programación Orientada a Eventos
+- Laboratorio 6: Programación Orientada a Eventos ft. Diego Sandoval
 - Larotatorio 7: 'Manejo de Ramas'
-- Laboratorio 8: 'Introduccion al Backend'
-- Laboratorio 9: 'DMBS de escritorio'
+- Laboratorio 8: 'Introduccion al Backend' ft. Diego Sandoval
+- Laboratorio 9: 'DMBS de escritorio' ft. Diego Sandoval
