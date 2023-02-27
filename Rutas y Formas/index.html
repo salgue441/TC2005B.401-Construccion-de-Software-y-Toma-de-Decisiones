@@ -6,15 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programacion Orientada a Eventos</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+      defer
+    ></script>
 
-    <script src="./app.js" defer></script>
+    <script src="./validator.js" defer></script>
   </head>
   <body>
-
     <main class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Laboratorio 10</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/"
+              >Guardador <span class="sr-only">(current)</span></a
+            >
+            <a class="nav-item nav-link" href="Michi">Michi</a>
+            <a class="nav-item nav-link" href="Datos">Datos</a>
+          </div>
+        </div>
+      </nav>
+
       <div class="passwordContainer">
-        <h2>Password Verifier</h2>
-        <p>Minimum password length is 8 characters. Needs to be alfanumeric</p>
+        <h2>Guardar Datos</h2>
 
         <form id="formID">
           <!-- Username -->
@@ -37,17 +71,9 @@
             required
           />
 
-          <!-- Verify password -->
-          <label for="verify_password">Verify password</label>
-          <input
-            type="password"
-            id="verify_password"
-            name="verify_password"
-            placeholder="Verify password"
-            required
-          />
-
-          <button class="button" type="submit" onclick="verify_data()">Submit</button>
+          <button class="button" type="submit" onclick="verify_data()">
+            Submit
+          </button>
         </form>
 
         <p id="result"></p>
@@ -61,13 +87,13 @@
             <th>Apellido</th>
             <th>Matrícula</th>
           </tr>
-  
+
           <tr>
             <td>Carlos</td>
             <td>Salguero</td>
             <td>A00833341</td>
           </tr>
-  
+
           <tr>
             <td>Diego</td>
             <td>Sandoval</td>
@@ -76,7 +102,5 @@
         </table>
       </div>
     </main>
-
- 
   </body>
 </html>
