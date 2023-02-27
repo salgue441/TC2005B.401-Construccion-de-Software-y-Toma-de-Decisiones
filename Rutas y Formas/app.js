@@ -32,7 +32,6 @@ fs.readFile("./index.html", (err, html) => {
 
             .on("end", () => {
               body = Buffer.concat(body).toString()
-              
               console.log(body)
             })
 
