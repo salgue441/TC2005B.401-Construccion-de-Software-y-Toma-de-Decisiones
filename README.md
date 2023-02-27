@@ -34,3 +34,4 @@ materia Construcción de Software y Toma de Decisiones.
 - Larotatorio 7: 'Manejo de Ramas'
 - Laboratorio 8: 'Introduccion al Backend' ft. Diego Sandoval
 - Laboratorio 9: 'DMBS de escritorio' ft. Diego Sandoval
+- Laboratorio 10: Rutas y Formas ft. Diego Sandoval
