@@ -24,6 +24,7 @@ fs.readFile("./index.html", (err, html) => {
           response.write(Datoshtml)
 
           let body = []
+
           request
             .on("data", (chunk) => {
               body.push(chunk)
@@ -31,6 +32,7 @@ fs.readFile("./index.html", (err, html) => {
 
             .on("end", () => {
               body = Buffer.concat(body).toString()
+              
               console.log(body)
             })
 
