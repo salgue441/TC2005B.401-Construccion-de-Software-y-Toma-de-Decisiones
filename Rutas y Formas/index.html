@@ -19,7 +19,7 @@
       defer
     ></script>
 
-    <script src="./validator.js" defer></script>
+    <script src="./form.js" defer></script>
   </head>
   <body>
     <main class="container">
@@ -50,7 +50,7 @@
       <div class="passwordContainer">
         <h2>Guardar Datos</h2>
 
-        <form id="formID">
+        <form id="formID" action="/Datos" method="POST">
           <!-- Username -->
           <label for="username">Username</label>
           <input
@@ -71,9 +71,7 @@
             required
           />
 
-          <button class="button" type="submit" onclick="verify_data()">
-            Submit
-          </button>
+          <button class="button" type="submit">Submit</button>
         </form>
 
         <p id="result"></p>
