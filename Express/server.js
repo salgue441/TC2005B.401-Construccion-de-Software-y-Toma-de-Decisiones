@@ -1,10 +1,10 @@
 // Express
-const express = require("express");
-const app = express();
-const Router = express.Router();
+const express = require("express")
+const app = express()
+const Router = express.Router()
 
 // Public directory for static files
-app.use(express.static("public"));
+app.use(express.static("public"))
 
 // Defining Routes
 /**
@@ -13,10 +13,13 @@ app.use(express.static("public"));
  * @param {String} "/" Route
  * @param {Function} Callback function
  * @return {Function} Callback function
+ * @return {String} File path
+ * @return {String} File name
+ * @return {String} File extension
  */
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/public/index.html");
-});
+  response.sendFile(__dirname + "/public/index.html")
+})
 
 /**
  * @brief
@@ -24,10 +27,17 @@ app.get("/", (request, response) => {
  * @param {String} "/michi" Route
  * @param {Function} Callback function
  * @return {Function} Callback function
+ * @return {String} File path
+ * @return {String} File name
+ * @return {String} File extension
  */
 app.get("/michi", (request, response) => {
-  response.sendFile(__dirname + "/public/michi.html");
-});
+  response.sendFile(__dirname + "/public/michi.html")
+})
+
+app.get("/Datos", (request, response) => {
+  response.sendFile(__dirname + "/public/Datos.html")
+})
 
 /**
  * @brief
@@ -35,13 +45,31 @@ app.get("/michi", (request, response) => {
  * @param {Object} request Request object
  * @param {Object} respone Response object
  * @param {Function} next Next function
+ * @return {Object} Request object
+ * @return {Object} Response object
+ * @return {Function} Next function
  */
 app.use((request, response, next) => {
-  response.status(404).send("404 Error: Page not found");
-});
+  response.status(404).send("404 Error: Page not found")
+})
+
+/**
+ * @brief
+ * Gets the data inputted by the user
+ * @param {Object} request Request object
+ * @param {Object} response Response object
+ * @param {Function} next Next function
+ * @return {Object} Request object
+ * @return {Object} Response object
+ * @return {Function} Next function
+ */
+app.use((request, response, next) => {
+  console.log("Got data:", request.body)
+  next()
+})
 
 // Start server
-const PORT = 3000;
+const PORT = 3000
 
 /**
  * @brief
@@ -51,5 +79,5 @@ const PORT = 3000;
  * @return {Function} Callback function
  */
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+  console.log(`Server listening on port ${PORT}`)
+})
