@@ -1,10 +1,10 @@
 // Express
-const express = require("express")
-const app = express()
-const Router = express.Router()
+const express = require("express");
+const app = express();
+const Router = express.Router();
 
 // Public directory for static files
-app.use(express.static("public"))
+app.use(express.static("public"));
 
 // Defining Routes
 /**
@@ -15,8 +15,8 @@ app.use(express.static("public"))
  * @return {Function} Callback function
  */
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/public/index")
-})
+  response.sendFile(__dirname + "/public/index.html");
+});
 
 /**
  * @brief
@@ -26,8 +26,8 @@ app.get("/", (request, response) => {
  * @return {Function} Callback function
  */
 app.get("/michi", (request, response) => {
-  response.sendFile(__dirname + "/public/michi")
-})
+  response.sendFile(__dirname + "/public/michi.html");
+});
 
 /**
  * @brief
@@ -37,11 +37,11 @@ app.get("/michi", (request, response) => {
  * @param {Function} next Next function
  */
 app.use((request, response, next) => {
-  response.status(404).send("404 Error: Page not found")
-})
+  response.status(404).send("404 Error: Page not found");
+});
 
 // Start server
-const PORT = 3000
+const PORT = 3000;
 
 /**
  * @brief
@@ -51,5 +51,5 @@ const PORT = 3000
  * @return {Function} Callback function
  */
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
-})
+  console.log(`Server listening on port ${PORT}`);
+});
