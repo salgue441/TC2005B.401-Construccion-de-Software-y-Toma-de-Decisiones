@@ -1,10 +1,12 @@
 // Express
-const express = require("express")
-const app = express()
-const Router = express.Router()
+const express = require("express");
+const app = express();
+const Router = express.Router();
+const bodyParser = require("body-parser");
+const routes = require("../../routes/server.routes");
 
-// Public directory for static files
-app.use(express.static("public"))
+// views directory for static files
+app.use(express.static("views"));
 
 // Defining Routes
 /**
@@ -18,8 +20,8 @@ app.use(express.static("public"))
  * @return {String} File extension
  */
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/public/index.html")
-})
+  response.sendFile(__dirname + "/views/index.html");
+});
 
 /**
  * @brief
@@ -32,8 +34,8 @@ app.get("/", (request, response) => {
  * @return {String} File extension
  */
 app.get("/michi", (request, response) => {
-  response.sendFile(__dirname + "/public/michi.html")
-})
+  response.sendFile(__dirname + "/michi.html");
+});
 
 /**
  * @brief
@@ -46,24 +48,24 @@ app.get("/michi", (request, response) => {
  * @return {String} File extension
  */
 app.get("/Datos", (request, response) => {
-  response.sendFile(__dirname + "/public/Datos.html")
-})
+  response.sendFile(__dirname + "/views/Datos.html");
+});
 
 app.post("/Datos", (request, response) => {
-  response.sendFile(__dirname + "/public/Datos.html")
+  response.sendFile(__dirname + "/views/Datos.html");
 
-  let body = []
+  let body = [];
 
   request
     .on("data", (chunk) => {
-      body.push(chunk)
+      body.push(chunk);
     })
 
     .on("end", () => {
-      body = Buffer.concat(body).toString()
-      console.log(body)
-    })
-})
+      body = Buffer.concat(body).toString();
+      console.log(body);
+    });
+});
 
 /**
  * @brief
@@ -75,8 +77,8 @@ app.post("/Datos", (request, response) => {
  * @return {String} File name
  */
 app.get("/Datos", (request, response) => {
-  response.sendFile(__dirname + "/public/Datos.html")
-})
+  response.sendFile(__dirname + "/Datos.html");
+});
 
 /**
  * @brief
@@ -88,8 +90,8 @@ app.get("/Datos", (request, response) => {
  * @return {String} File name
  */
 app.get("/perro", (request, response) => {
-  response.sendFile(__dirname + "/public/perro.html")
-})
+  response.sendFile(__dirname + "/views/perro.html");
+});
 
 /**
  * @brief
@@ -101,8 +103,32 @@ app.get("/perro", (request, response) => {
  * @return {String} File name
  */
 app.get("/ajolote", (request, response) => {
-  response.sendFile(__dirname + "/public/ajolote.html")
-})
+  response.sendFile(__dirname + "/views/ajolote.html");
+});
+
+/**
+ * @brief
+ * Module comida
+ * @param {String} "/comida" Route
+ * @param {Function} Callback function
+ * @return {Function} file name
+ */
+
+app.get("/comida/michi", (request, response) => {
+  response.sendFile(__dirname + "/views/comida/michi.html");
+});
+
+/**
+ * @brief
+ * Module comida
+ * @param {String} "/comida" Route
+ * @param {Function} Callback function
+ * @return {Function} file name
+ */
+
+app.get("/comida/perro", (request, response) => {
+  response.sendFile(__dirname + "/views/comida/perro.html");
+});
 
 /**
  * @brief
@@ -115,11 +141,11 @@ app.get("/ajolote", (request, response) => {
  * @return {Function} Next function
  */
 app.use((request, response, next) => {
-  response.status(404).send("<h1>404 Error:</h1> Page not found")
-})
+  response.status(404).send("<h1>404 Error:</h1> Page not found");
+});
 
 // Start server
-const PORT = 3000
+const PORT = 3000;
 
 /**
  * @brief
@@ -129,5 +155,5 @@ const PORT = 3000
  * @return {Function} Callback function
  */
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
-})
+  console.log(`Server listening on port ${PORT}`);
+});
