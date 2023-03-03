@@ -126,9 +126,9 @@ app.get("/comida/michi", (request, response) => {
  * @return {Function} file name
  */
 
-app.get("/comida/perro", (request, response) => {
-  response.sendFile(__dirname + "/views/comida/perro.html");
-});
+// app.get("/comida/perro", (request, response) => {
+//   response.sendFile(__dirname + "/views/comida/perro.html");
+// });
 
 /**
  * @brief
