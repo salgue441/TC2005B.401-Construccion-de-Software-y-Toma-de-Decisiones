@@ -1,0 +1,24 @@
+<%- include("../include/header.ejs") %>
+
+<body>
+  <%- include("../include/navbar.ejs") %>
+
+  <secton class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Welcome, <%= locals.username %></h1>
+        <h2 class="subtitle">You have been authenticated.</h2>
+
+        <button
+          class="button is-primary"
+          onclick="alert('Hello, <%= locals.username %> \nPassword: <%= locals.password %>')"
+        >
+          Show me my credentials
+        </button>
+      </div>
+    </div>
+  </secton>
+</body>
+
+<!-- Footer -->
+<%- include("../include/footer.ejs") %>
