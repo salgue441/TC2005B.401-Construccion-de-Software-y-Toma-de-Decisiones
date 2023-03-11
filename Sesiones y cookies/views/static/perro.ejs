@@ -1,0 +1,28 @@
+<%- include("../include/header.ejs") %>
+
+<body>
+  <%- include("../include/navbar.ejs") %>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <figure class="image is-4by3">
+            <img alt="Dog" src="<%= link %>" />
+          </figure>
+
+          <br />
+          <button
+            class="button is-link is-fullwidth"
+            onclick="location.href='/food/comidaPerro'"
+          >
+            Ver opciones de comida
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+<!-- Footer -->
+<%- include("../include/footer.ejs") %>
