@@ -14,5 +14,8 @@ exports.postNuevaComidaPerro = (req, res) => {
     cardContent: req.body.cardContent,
   });
   newFood.save();
+
+  req.session.ultimacomida = newFood.cardTitle;
+
   res.redirect("/food/comidaPerro");
 };
