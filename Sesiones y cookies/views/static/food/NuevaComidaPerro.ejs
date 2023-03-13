@@ -1,0 +1,77 @@
+<%- include("../../include/header.ejs") %>
+
+<body>
+  <%- include("../../include/navbar.ejs") %>
+
+  <section class="section">
+    <div class="container">
+      <form id="formID" action="/food/nuevacomidaperro" method="POST">
+        <div class="field">
+          <label class="label">titulo</label>
+
+          <div class="control">
+            <input
+              class="input"
+              id="titulo"
+              name="cardTitle"
+              type="text"
+              placeholder="Enter your titulo: "
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">subtitulo</label>
+
+          <div class="control">
+            <input
+              class="input"
+              id="subtitulo"
+              name="cardSubtitle"
+              type="text"
+              placeholder="Enter your subtitulo: "
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Imagen</label>
+
+          <div class="control">
+            <input
+              class="input"
+              id="src"
+              name="cardSrc"
+              type="text"
+              placeholder="Enter your imagen: "
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">descripcion</label>
+
+          <div class="control">
+            <input
+              class="input"
+              id="descriocion"
+              name="cardContent"
+              type="text"
+              placeholder="Enter your descriocion: "
+            />
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="control">
+            <input class="button is-link" type="submit"></input>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+</body>
+
+<!-- Footer -->
+<%- include("../../include/footer.ejs") %>

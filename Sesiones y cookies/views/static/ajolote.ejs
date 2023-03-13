@@ -1,0 +1,82 @@
+<%- include("../include/header.ejs") %>
+
+<body>
+  <!-- Navbar -->
+  <%- include("../include/navbar.ejs") %>
+
+  <main class="container is-fluid">
+    <section class="hero is-primary is-medium">
+      <div class="columns">
+        <div class="column is-half">
+          <section class="hero is-primary is-medium">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">Ajolotes</h1>
+                <h2 class="subtitle">¿Qué son los ajolotes?</h2>
+
+                <p class="description">
+                  Los ajolotes son una especie de anfibio que habita en el
+                  estado de Veracruz, México. Son conocidos por su peculiar
+                  forma de reproducción, en la cual el macho deposita sus huevos
+                  en el vientre de la hembra, que los incubará hasta que nazcan
+                  los ajolotes.
+
+                  <br /><br />
+
+                  Estos anfibios son muy apreciados por su carne, que es muy
+                  rica en proteínas y minerales. Además, su piel es muy
+                  apreciada por su textura y su color, que varía entre el verde
+                  y el azul.
+
+                  <br /><br />
+
+                  Estos son algunos de los ajolotes que se pueden encontrar en
+                  el estado de Veracruz:
+
+                  <br /><br />
+
+                  - Ajolote de agua dulce <br />
+                  - Ajolote de agua salada <br />
+                  - Ajolote de agua dulce y salada
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="column is-half">
+          <section class="section">
+            <div class="container">
+              <div id="image-container">
+                <img src="<%= images[0] %>" alt="Ajolote" />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /**
+     * @brief
+     * Cylically changes the image in the image container.
+     */
+    const imageContainer = document.getElementById("image-container")
+    const images = [
+      "<%= images[0] %>",
+      "<%= images[1] %>",
+      "<%= images[2] %>",
+      "<%= images[3] %>",
+    ]
+
+    let i = 0
+    setInterval(() => {
+      imageContainer.innerHTML = `<img src="${images[i]}" alt="Ajolote" />`
+      i = (i + 1) % images.length
+    }, 5000)
+  </script>
+</body>
+
+<!-- Footer -->
+<%- include("../include/footer.ejs") %>
