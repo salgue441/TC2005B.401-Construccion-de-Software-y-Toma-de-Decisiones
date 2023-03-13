@@ -1,0 +1,47 @@
+<%- include("../../include/header.ejs") %>
+
+<body>
+  <%- include("../../include/navbar.ejs") %>
+
+  <main class="container is-fluid">
+    <div>
+      <h1 class="title">Food Pictures</h1>
+      <h3 class="subtitle">Grid of Dog Food</h3>
+    </div>
+
+    <br />
+
+    <div class="container">
+      <div class="columns is-multiline">
+        <% for (let i = 0; i < foods.length; i++) { %>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="<%= foods[i].cardSrc %>" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4"><%= foods[i].cardTitle %></p>
+              <p class="subtitle is-6"><%= foods[i].cardSubtitle %></p>
+              <div class="content"><%= foods[i].cardContent %></div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+      <button
+        class="button is-link"
+        onclick="location.href='./nuevacomidaperro'"
+      >
+        Registrar comida
+      </button>
+      <div class="notificacion is-link is-light">
+        Ultima comida registrada fue: <%= ultima_comida %>
+      </div>
+    </div>
+  </main>
+</body>
+
+<!-- Footer -->
+<%- include("../../include/footer.ejs") %>
