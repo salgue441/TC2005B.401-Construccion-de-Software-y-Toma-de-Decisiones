@@ -24,6 +24,7 @@ materia Construcción de Software y Toma de Decisiones.
 
 ## Table of Contents
 
+### Laboratorios
 - Laboratorio 0: Presentación en la plataforma Slack y registro en la malla de evaluación.
 - Laboratorio 1: Introducción a las aplicaciones web, HTML5 y ciclo de vida en los sistemas de información
 - Laboratorio 2: Control de Versiones
@@ -35,4 +36,15 @@ materia Construcción de Software y Toma de Decisiones.
 - Laboratorio 8: 'Introduccion al Backend' ft. Diego Sandoval
 - Laboratorio 9: 'DMBS de escritorio' ft. Diego Sandoval
 - Laboratorio 10: Rutas y Formas ft. Diego Sandoval
-- Laboratorio 11: Express
+- Laboratorio 11: Express ft. Diego Sandoval
+- Laboratorio 12: HTML Dinamico ft. Diego Sandoval
+- Laboratorio 13: MVC ft. Diego Sandoval
+- Laboratorio 14: Manejo de Sesiones y Cookies ft. Diego Sandoval
+- Laboratorio 15: Conociendo el Ambiente de MariaDB ft. Diego Sandoval
+- Laboratorio 16: Creacion de constraints para instrumentar integridad referencial en MariaDB ft. Diego Sandoval
+- Laboratorio 17: Interacción con la base de datos ft. Diego Sandoval
+- Laboratorio 18: Authentication
+
+### Ejercicios
+
+- Ejercicio: Expresión de consultas en SQL usando funciones agregadas ft. Diego Sandoval
