@@ -1,10 +1,10 @@
-const path = require("path");
+const path = require("path")
 
-const comidaPerro = require("../models/comidaPerro.model");
+const comidaPerro = require("../models/comidaPerro.model")
 
 exports.getNuevaComidaPerro = (req, res) => {
-  res.render(path.join(__dirname, "../views/static/food/NuevaComidaPerro.ejs"));
-};
+  res.render(path.join(__dirname, "../views/static/food/NuevaComidaPerro.ejs"))
+}
 
 exports.postNuevaComidaPerro = (req, res) => {
   const newFood = new comidaPerro({
@@ -12,10 +12,10 @@ exports.postNuevaComidaPerro = (req, res) => {
     cardSubtitle: req.body.cardSubtitle,
     cardSrc: req.body.cardSrc,
     cardContent: req.body.cardContent,
-  });
-  newFood.save();
+  })
+  newFood.save()
 
-  req.session.ultimacomida = newFood.cardTitle;
+  req.session.ultimacomida = newFood.cardTitle
 
-  res.redirect("/food/comidaPerro");
-};
+  res.redirect("/food/comidaPerro")
+}

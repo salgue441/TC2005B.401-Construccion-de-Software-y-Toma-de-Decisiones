@@ -1,6 +1,6 @@
-const { response } = require("express");
-const path = require("path");
-const comidaPerro = require("../models/comidaPerro.model");
+const { response } = require("express")
+const path = require("path")
+const comidaPerro = require("../models/comidaPerro.model")
 
 /**
  * Gets the comidaPerro page
@@ -10,18 +10,31 @@ const comidaPerro = require("../models/comidaPerro.model");
  * @return list of foods
  */
 exports.getComidaPerro = (req, res) => {
-  const cookies = req.get("Cookie") || "";
+  const cookies = req.get("Cookie") || ""
 
-  let consultas = cookies.split("=")[1] || 0;
+  let consultas = cookies.split("=")[1] || 0
 
-  consultas++;
+  consultas++
 
-  res.setHeader("Set-Cookie", "consultas=" + consultas + "; HttpOnly");
+  res.setHeader("Set-Cookie", "consultas=" + consultas + "; HttpOnly")
 
-  console.log(req.get("Cookie"));
+  console.log(req.get("Cookie"))
 
-  res.render(path.join(__dirname, "../views/static/food/comidaPerro.ejs"), {
-    foods: comidaPerro.fetchAll(),
-    ultima_comida: req.session.ultimacomida || "Ninguna",
-  });
-};
+  comidaPerro.fetchAll().then(([rows, fieldData]) => {
+    res.render("static/food/comidaPerro", {
+      foods: rows,
+      ultima_comida: req.session.ultimacomida || "Ninguno",
+    })
+  })
+}
+
+exports.postMichi = (req, res) => {
+  const michi = new michis(req.body)
+
+  michi
+    .save()
+    .then(() => {
+      res.redirect("/michi")
+    })
+    .catch((err) => console.log(err))
+}

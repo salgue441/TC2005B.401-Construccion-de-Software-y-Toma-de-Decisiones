@@ -1,4 +1,3 @@
-const path = require("path")
 const michis = require("../models/michis.models")
 
 /**
@@ -7,7 +6,26 @@ const michis = require("../models/michis.models")
  * @param {*} res - Response
  */
 exports.getMichi = (req, res) => {
-  res.render(path.join(__dirname, "../views/static/michi.ejs"), {
-    cards: michis.fetchAll(),
+  michis.fetchAll().then(([rows, fieldData]) => {
+    res.render("static/michi", {
+      cards: rows,
+    })
   })
+}
+
+/**
+ * Posts the michi page
+ * @param {*} req - Request
+ * @param {*} res - Response
+ * @param {*} next - Next
+ */
+exports.postMichi = (req, res) => {
+  const michi = new michis(req.body)
+  
+  michi
+    .save()
+    .then(() => {
+      res.redirect("/michi")
+    })
+    .catch((err) => console.log(err))
 }
