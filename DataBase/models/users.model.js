@@ -1,4 +1,5 @@
 const database = require("../utils/dataBase");
+const bcrypt = require("bcryptjs");
 
 module.exports = class User {
   constructor(user) {
@@ -7,9 +8,16 @@ module.exports = class User {
   }
 
   save() {
-    return database.execute(
-      `insert into usuario (username, password) values (?, ?)`,
-      [this.username, this.password]
-    );
+    return bcrypt
+      .hash(this.password, 12)
+      .then((hashedPassword) => {
+        return database.execute(
+          `insert into usuario (username, password) values (?, ?)`,
+          [this.username, hashedPassword]
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 };
