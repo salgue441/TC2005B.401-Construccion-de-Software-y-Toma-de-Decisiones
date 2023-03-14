@@ -1,10 +1,10 @@
-const express = require("express")
-const router = express.Router()
-const path = require("path")
-const bodyParser = require("body-parser")
+const express = require("express");
+const router = express.Router();
+const path = require("path");
+const bodyParser = require("body-parser");
 
 //Body parser config
-router.use(bodyParser.urlencoded({ extended: true }))
+router.use(bodyParser.urlencoded({ extended: true }));
 
 // Defining Routes
 /**
@@ -14,8 +14,8 @@ router.use(bodyParser.urlencoded({ extended: true }))
  * @param {function} callback - Callback function
  * @return {void} - Returns nothing
  */
-const homeController = require("../controllers/home.controller")
-router.get("/", homeController.getHome)
+const homeController = require("../controllers/home.controller");
+router.get("/", homeController.getHome);
 
 /**
  * @brief
@@ -24,8 +24,8 @@ router.get("/", homeController.getHome)
  * @param {function} callback - Callback function
  * @return {void} - Returns nothing
  */
-const michiController = require("../controllers/michi.controller")
-router.get("/michi", michiController.getMichi)
+const michiController = require("../controllers/michi.controller");
+router.get("/michi", michiController.getMichi);
 
 /**
  * @brief
@@ -34,8 +34,8 @@ router.get("/michi", michiController.getMichi)
  * @param {Function} Callback function - Sends a file
  * @return {void} - Returns nothing
  */
-const perroController = require("../controllers/perro.controller")
-router.get("/perro", perroController.getPerro)
+const perroController = require("../controllers/perro.controller");
+router.get("/perro", perroController.getPerro);
 
 /**
  * @brief
@@ -44,8 +44,8 @@ router.get("/perro", perroController.getPerro)
  * @param {Function} Callback function - Sends a file
  * @return {void} - Returns nothing
  */
-const ajoloteController = require("../controllers/ajolote.controller")
-router.get("/ajolote", ajoloteController.getAjolote)
+const ajoloteController = require("../controllers/ajolote.controller");
+router.get("/ajolote", ajoloteController.getAjolote);
 
 /**
  * @brief
@@ -54,8 +54,8 @@ router.get("/ajolote", ajoloteController.getAjolote)
  * @param {Function} Callback function - Sends a file
  * @return {void} - Returns nothing
  */
-const datosController = require("../controllers/datos.controller")
-router.get("/datos", datosController.getDatos)
+const datosController = require("../controllers/datos.controller");
+router.get("/datos", datosController.getDatos);
 
 /**
  * @brief
@@ -64,7 +64,20 @@ router.get("/datos", datosController.getDatos)
  * @param {Function} Callback function - Sends a file
  * @return {void} - Returns nothing
  */
-router.post("/", datosController.postDatos)
+router.post("/", datosController.postDatos);
+
+/**
+ * @brief
+ * signup page
+ * @param {String} "/signup" Route
+ * @param {Function} Callback function - Sends a file
+ * @return {void} - Returns nothing
+ */
+
+const signupController = require("../controllers/users.controller");
+router.get("/signup", signupController.getSignup);
+
+router.post("/signup", signupController.postSignup);
 
 // Exporting Routes
-module.exports = router
+module.exports = router;

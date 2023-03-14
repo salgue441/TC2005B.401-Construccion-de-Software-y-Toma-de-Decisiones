@@ -24,6 +24,7 @@
       <a class="navbar-item" href="/perro">Perro</a>
       <a class="navbar-item" href="/Ajolote">Ajolote</a>
       <a class="navbar-item" href="/datos">Datos</a>
+      <a class="navbar-item is-right" href="/signup"> SignUp </a>
     </div>
   </div>
 </nav>
@@ -33,18 +34,18 @@
     var $navbarBurgers = Array.prototype.slice.call(
       document.querySelectorAll(".navbar-burger"),
       0
-    )
+    );
 
     if ($navbarBurgers.length > 0) {
       $navbarBurgers.forEach((el) => {
         el.addEventListener("click", () => {
-          var target = el.dataset.target
-          var $target = document.getElementById(target)
+          var target = el.dataset.target;
+          var $target = document.getElementById(target);
 
-          el.classList.toggle("is-active")
-          $target.classList.toggle("is-active")
-        })
-      })
+          el.classList.toggle("is-active");
+          $target.classList.toggle("is-active");
+        });
+      });
     }
-  })
+  });
 </script>

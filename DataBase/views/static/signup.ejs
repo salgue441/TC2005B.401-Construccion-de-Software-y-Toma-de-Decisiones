@@ -1,0 +1,46 @@
+<%- include("../include/header.ejs") %>
+
+<body>
+  <!-- Navbar -->
+  <%- include("../include/navbar.ejs") %>
+
+  <div class="section">
+    <div class="container">
+      <h1 class="title">Regístrate</h1>
+      <form method="POST" action="/signup">
+        <div class="field">
+          <label for="username">Username:</label>
+          <input
+            name="username"
+            id="username"
+            class="input is-rounded"
+            type="text"
+            placeholder="Username"
+          />
+        </div>
+
+        <div class="field">
+          <label for="password">Password:</label>
+          <input
+            name="password"
+            id="password"
+            class="input is-rounded"
+            type="password"
+            placeholder="*******"
+          />
+        </div>
+
+        <div class="field">
+          <input
+            class="button is-info is-rounded i"
+            type="submit"
+            value="Register"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+<!-- Footer -->
+<%- include("../include/footer.ejs") %>
